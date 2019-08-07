@@ -44,13 +44,13 @@ bookmarkRouter
           description,
           rating
         }
-        
-        res.send(bookmark)
       
+        bookmarks.push(bookmark);
+        
         logger.info(`bookmark created with ${id}`);
       
         res.status(200).location(`http://localhost:8000/bookmarks/${id}`).json(bookmark)
-    })
+})
 
 bookmarkRouter
     .route('/bookmarks/:id')
